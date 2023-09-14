@@ -1,0 +1,30 @@
+# INSTALANDO DJANGO
+pip install Django psycopg2
+
+# CREAMOS EL PROJECTO
+django -admin startproject syscolegio
+# o caso contrario
+python -m django startproject syscolegio
+
+# EJECUTANDO EL PROYECTO
+python manage.py runserver
+
+#INSTALANDO EL PAQUETE DE CONEXION MYSQL
+pip install pymysql
+
+# cerando la aplicacion academico en Django
+django-admin startapp academico
+
+# COMANDO PARA REALIZAR LA CREACION DE LOS MODELOS PARA PASAR A MYSQL
+python manage.py makemigrations # cada que se crea una tabla
+
+# COMAND0O PARA REALIZAR LA MIGRACION DE LOS MODELOS DE LA BASE DE DATOS
+python manage.py migrate
+
+# USUARIO ADMINSITRADOR DE PROYECTO
+python manage.py createsuperuser
+
+# INSTALAR EL FRAMEWORK DJANGORESTFRAMEWORK para trabajar con api rest
+pip install djangorestframework
+
+#REFRESCAR PAGINA CTRL + SHIFT + R

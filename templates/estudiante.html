@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content-header %}
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Estudiante</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                    <li class="breadcrumb-item active">Estudiante</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content-body %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card card-primary">
+            <div class="card-header">
+                <span>Crear estudiante</span>
+            </div>
+            <div class="card-body">
+                <form id="form_create">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <labe>DNI</labe>
+                                <input type="text" name="dni" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <labe>Nombres</labe>
+                                <input type="text" name="nombre" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <labe>Apellidos</labe>
+                                <input type="text" name="apellido" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <labe>Estado</labe>
+                                <select name="estado" class="form-control" required>
+                                    <option value="" selected disabled>Seleccione opción</option>
+                                    <option value="1">Habilitado</option>
+                                    <option value="0">Deshabilitado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card card-primary">
+            <div class="card-header">
+                <span>Lista de estudiantes</span>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="tabla_estudiante" class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>DNI</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Estado</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modaledit-estudiante">
+    <div class="modal-dialog">
+        <form id="form_edit">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Default Modal</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <labe>ID</labe>
+                                <input type="text" id="e_id" name="e_id" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <labe>DNI</labe>
+                                <input type="text" id="e_dni" name="e_dni" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <labe>Nombres</labe>
+                                <input type="text" id="e_nombre" name="e_nombre" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <labe>Apellidos</labe>
+                                <input type="text" id="e_apellido" name="e_apellido" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <labe>Estado</labe>
+                                <select id="e_estado" name="e_estado" class="form-control" required>
+                                    <option value="" selected disabled>Seleccione opción</option>
+                                    <option value="1">Habilitado</option>
+                                    <option value="0">Deshabilitado</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-warning">Actualizar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block content-js %}
+<script src="{% static 'js/estudiante.js' %}"></script>
+{% endblock %}
